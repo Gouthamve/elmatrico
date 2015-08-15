@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
 	nvisionId: String,
+  event: String,
 	facebook: {
 		id: String,
 		displayName: String,

@@ -69,6 +69,7 @@ passport.use(new FacebookStrategy({
           newUser.facebook.gender = profile.gender;
           newUser.facebook.profileUrl = profile.profileUrl;
           newUser.facebook.email = profile.emails[0].value;
+          newUser.event = "elmatrico"
           newUser.save(function(err) {
             if (err) {
               return done(err)
@@ -113,6 +114,7 @@ passport.use(new GoogleStrategy({
             newUser.google.gender = profile.gender;
             newUser.google.domain = profile._json.domain;
             newUser.google.profileUrl = profile._json.url;
+            newUser.event = "elmatrico"
             newUser.save(function(err) {
               if (err) {
                 return done(err)
