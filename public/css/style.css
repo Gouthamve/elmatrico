@@ -107,19 +107,19 @@ rippleDrop {  100% {
 }
 
 .image_1{
-	background-image: url("/img/sample_image.jpg");
+	background-image: url("http://in.mathworks.com/images/responsive/features/events-expo15.jpg");
 }
 
 .image_2{
-	background-image:url("/img/1.jpg");
+	background-image:url("http://in.mathworks.com/images/responsive/features/events-matlabvirtualconference15.jpg");
 }
 
 .image_3{
-	background-image:url("/img/6.jpg");
+	background-image:url("http://in.mathworks.com/images/responsive/features/events-diagonal-lines.jpg");
 }
 
 .image_4{
-	background-image:url("/img/8.jpg");
+	background-image:url("http://in.mathworks.com/images/responsive/features/events-grid-circles.jpg");
 }
 
 .tag_content_card{
