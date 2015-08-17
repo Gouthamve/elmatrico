@@ -145,6 +145,10 @@ rippleDrop {  100% {
   .tag_content_card{
     width:90%;
   }
+  
+  .card_content{
+    font-size:1.2em;
+  }
 }
 
 .card_content{
