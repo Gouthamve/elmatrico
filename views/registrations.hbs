@@ -34,8 +34,8 @@
   </tr>
 	{{#each people}}
   <tr>
-		{{#if facebook}}
-	    <td>{{facebook.displayName}}</td>
+		{{#if facebook.name}}
+	    <td>{{facebook.name.givenName}}</td>
 	    <td>{{facebook.email}}</td>
 	    <td>{{nvisionId}}</td>
 		{{else}}
