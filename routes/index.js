@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/reg', function(req, res, next) {
-  User.find().exec(function(err, users) {
+  User.find({event: "elmatrico"}).exec(function(err, users) {
     res.render('registrations', {
       people: users
     })
