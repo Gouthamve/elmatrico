@@ -26,7 +26,7 @@
 
     <!-- Stylesheets and scripts -->
     <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/demo.css">
@@ -35,7 +35,7 @@
 	</head>
 	<body>
 		<div id="container" class="container intro-effect-sliced">
-      <!-- Social button 
+      <!-- Social button
 			<nav class="radialnav">
 			  <a href="#" class="ellipsis"><i class="fa fa-share fa-2x"></i></a>
 			  <ul class="menu">
@@ -59,11 +59,15 @@
 				<div class="tab_wrap">
 					<div class="tabs">
 						<ul>
-						  <li class="category" onClick="tabs(1)"> <a name="tab" id="tab_1" class="active"> 
+						  <li class="category" onClick="tabs(1)"> <a name="tab" id="tab_1" class="active">
 						  	<span> <i class="fa fa-pencil-square-o"></i></span> <span class="tab_text">Introduction </span></a></li>
 						  <li class="category" onClick="tabs(2)"><a name="tab" id="tab_2"> <span> <i class="fa fa-file-text"></i></span><span class="tab_text"> Rules </span></a></li>
 						  <li class="category"  onClick="tabs(3)"><a name="tab" id="tab_3"><span> <i class="fa fa-phone"></i></span> <span class="tab_text"> Contact </span> </a></li>
-						  <li class="category" id="register" onClick="tabs(4)"><a name="tab" id="tab_4"><span> <i class="fa fa-sign-in"></i></span> <span class="tab_text"> Register </span> </a> </li>
+              {{#if user}}
+						  <li class="category" id="register" onClick="tabs(4)"><a name="tab" id="tab_4"><span> <i class="fa fa-sign-in"></i></span> <span class="tab_text"> Submit </span> </a> </li>
+              {{else}}
+              <li class="category" id="register" onClick="tabs(4)"><a name="tab" id="tab_4"><span> <i class="fa fa-sign-in"></i></span> <span class="tab_text"> Register </span> </a> </li>
+              {{/if}}
 						  <li class="slider"></li>
 						</ul>
 					</div>
@@ -80,12 +84,21 @@
                 <br>
                 <strong> First problem statement </strong>: 9:00 AM, Friday on 21-08-2015
                 {{#if user}}
+                <br>
+                  <p>
+                    <a href="problemstatement_1.pdf" target="_blank">
+                      <button class="fill_button"><span class="button_content">Problem Statement</span></button>
+                    </a>
+                  </p>
+                  <br>
                 <p>
                   <a data-toggle="tab" onclick="registerTab()">
                     <button class="fill_button"><span class="button_content">Submit </span></button>
                   </a>
                 </p>
               {{else}}
+              <p> <strong>Problem Statement Launched!! Register/Login now!!</strong>
+          		<br>
                 <p>
                   <a data-toggle="tab" onclick="registerTab()">
                     <button class="fill_button"><span class="button_content"> Register </span></button>
@@ -95,7 +108,7 @@
 		  					</div>
 		  				</div>
 					</div>
-    				
+
     				<div name="tab_content" id="tab_content_2" class="tab_content">
   						<div class="tag_content">
 		  					<div class="tag_content_image image_2 opaque"></div>
@@ -120,6 +133,28 @@
                       <p style="font-size:1.1em;line-height:2em;">
                         The judging will be based upon the time efficiency of your code. If the time taken by your code is closer to the minimum time set by the organizers, you will get more points.<br>
                       </p>
+                      {{#if user}}
+                      <br>
+                        <p>
+                          <a href="problemstatement_1.pdf" target="_blank">
+                            <button class="fill_button"><span class="button_content">Problem Statement</span></button>
+                          </a>
+                        </p>
+                        <br>
+                      <p>
+                        <a data-toggle="tab" onclick="registerTab()">
+                          <button class="fill_button"><span class="button_content">Submit </span></button>
+                        </a>
+                      </p>
+                    {{else}}
+                    <p> <strong>Problem Statement Launched!! Register/Login now!!</strong>
+                		<br>
+                      <p>
+                        <a data-toggle="tab" onclick="registerTab()">
+                          <button class="fill_button"><span class="button_content"> Register </span></button>
+                        </a>
+                      </p>
+                    {{/if}}
 			  					</div>
 			  				</div>
 						</div>
@@ -137,6 +172,28 @@
                       <strong> K Chandra Prakash </strong>
                       <h3><i class="fa fa-mobile"></i>&nbsp; +91-8712766212 <br><i class="fa fa-envelope"></i> &nbsp;ee14btech11014@iith.ac.in </h3>
                     </center>
+                    {{#if user}}
+                    <br>
+                      <p>
+                        <a href="problemstatement_1.pdf" target="_blank">
+                          <button class="fill_button"><span class="button_content">Problem Statement</span></button>
+                        </a>
+                      </p>
+                      <br>
+                    <p>
+                      <a data-toggle="tab" onclick="registerTab()">
+                        <button class="fill_button"><span class="button_content">Submit </span></button>
+                      </a>
+                    </p>
+                  {{else}}
+                  <p> <strong>Problem Statement Launched!! Register/Login now!!</strong>
+              		<br>
+                    <p>
+                      <a data-toggle="tab" onclick="registerTab()">
+                        <button class="fill_button"><span class="button_content"> Register </span></button>
+                      </a>
+                    </p>
+                  {{/if}}
 			  					</div>
 			  				</div>
 						</div>
@@ -158,9 +215,21 @@
                         Your ηvisionId: {{user.nvisionId}}
 
                       {{/if}}
-                      <p>
-                        This page will be updated with further details and the Problem Statement. So stay tuned!
-                      </p>
+
+                        Please send an email to <strong>ee13b1038@iith.ac.in</strong> AND <strong>ee14btech11014@iith.ac.in</strong> with the solution as a <strong>.zip</strong> file.
+                        <br>
+                        <br>
+                        Please make sure you have the SUBJECT as <strong>"elmatrico: {{user.nvisionId}}"</strong> and have information on how to run the code in the body
+                        <br>
+                        <br>
+                        For Gmail: <a href="https://mail.google.com/mail/u/0/?su=elmatrico: {{user.nvisionId}}&view=cm&fs=1&tf=1&to=ee13b1038@iith.ac.in,ee14btech11014@iith.ac.in&body=How to run the code" style="color:black;">Click Here</a>
+                        <br><br><br>
+                          <p>
+                            <a href="problemstatement_1.pdf" target="_blank">
+                              <button class="fill_button"><span class="button_content">Problem Statement</span></button>
+                            </a>
+                          </p>
+
                       {{else}}
                       <h3>
                         Register
@@ -175,38 +244,38 @@
 			  				</div>
 						</div>
     				</div>
-    			</div>						
+    			</div>
 			</article>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" >
-function tabs(selectedtab) {    
+function tabs(selectedtab) {
     // contents
-    var s_tab_content = "tab_content_" + selectedtab;   
+    var s_tab_content = "tab_content_" + selectedtab;
     var contents = document.getElementsByTagName("div");
     for(var x=0; x<contents.length; x++) {
         name = contents[x].getAttribute("name");
         if (name == 'tab_content') {
             if (contents[x].id == s_tab_content) {
-            contents[x].style.display = "block";                        
+            contents[x].style.display = "block";
             } else {
             contents[x].style.display = "none";
             }
         }
-    }   
+    }
     // tabs
-    var s_tab = "tab_" + selectedtab;       
+    var s_tab = "tab_" + selectedtab;
     var tabs = document.getElementsByTagName("a");
     for(var x=0; x<tabs.length; x++) {
         name = tabs[x].getAttribute("name");
         if (name == 'tab') {
             if (tabs[x].id == s_tab) {
-            tabs[x].className = "active";                       
+            tabs[x].className = "active";
             } else {
             tabs[x].className = "";
             }
         }
-    }     
+    }
 }
 </script>
 <script type="text/javascript">
@@ -230,13 +299,13 @@ function openMenu (thisButton) {
 /* On click of the ellipsis */
 $('.ellipsis').click(function (event) {
   event.preventDefault();
-  
+
   openMenu($('.radialnav'));
 });
 
 menuItems.find('a').each(function (index) {
   thisMenuItem = $(this);
-  
+
   thisMenuItem.hover(function () {
     // Hover over
     submenuId = menuItems.eq(index).attr('data-submenu');
@@ -311,12 +380,12 @@ $("ul li").click(function(e) {
     left: x + 'px'
   }).addClass("rippleEffect");
 });
-</script> 
+</script>
 		<script src="classie.js"></script>
 		<script>
 			(function() {
 
-				// detect if IE : from http://stackoverflow.com/a/16657946		
+				// detect if IE : from http://stackoverflow.com/a/16657946
 				var ie = (function(){
 					var undef,rv = -1; // Return value assumes failure.
 					var ua = window.navigator.userAgent;
@@ -336,7 +405,7 @@ $("ul li").click(function(e) {
 				}());
 
 
-				// disable/enable scroll (mousewheel and keys) from http://stackoverflow.com/a/4770179					
+				// disable/enable scroll (mousewheel and keys) from http://stackoverflow.com/a/4770179
 				// left: 37, up: 38, right: 39, down: 40,
 				// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 				var keys = [32, 37, 38, 39, 40], wheelIter = 0;
@@ -345,7 +414,7 @@ $("ul li").click(function(e) {
 					e = e || window.event;
 					if (e.preventDefault)
 					e.preventDefault();
-					e.returnValue = false;  
+					e.returnValue = false;
 				}
 
 				function keydown(e) {
@@ -362,7 +431,7 @@ $("ul li").click(function(e) {
 				}
 
 				function wheel(e) {
-					// for IE 
+					// for IE
 					//if( ie ) {
 						//preventDefault(e);
 					//}
@@ -375,13 +444,13 @@ $("ul li").click(function(e) {
 				}
 
 				function enable_scroll() {
-					window.onmousewheel = document.onmousewheel = document.onkeydown = document.body.ontouchmove = null;  
+					window.onmousewheel = document.onmousewheel = document.onkeydown = document.body.ontouchmove = null;
 				}
 
 				var docElem = window.document.documentElement,
 					scrollVal,
-					isRevealed, 
-					noscroll, 
+					isRevealed,
+					noscroll,
 					isAnimating,
 					container = document.getElementById( 'container' ),
 					trigger = container.querySelector( 'button.trigger' );
@@ -389,10 +458,10 @@ $("ul li").click(function(e) {
 				function scrollY() {
 					return window.pageYOffset || docElem.scrollTop;
 				}
-				
+
 				function scrollPage() {
 					scrollVal = scrollY();
-					
+
 					if( noscroll && !ie ) {
 						if( scrollVal < 0 ) return false;
 						// keep it that way
@@ -407,7 +476,7 @@ $("ul li").click(function(e) {
 					if( isAnimating ) {
 						return false;
 					}
-					
+
 					if( scrollVal <= 0 && isRevealed ) {
 						toggle(0);
 					}
@@ -418,7 +487,7 @@ $("ul li").click(function(e) {
 
 				function toggle( reveal ) {
 					isAnimating = true;
-					
+
 					if( reveal ) {
 						classie.add( container, 'modify' );
 					}
@@ -442,15 +511,15 @@ $("ul li").click(function(e) {
 				// refreshing the page...
 				var pageScroll = scrollY();
 				noscroll = pageScroll === 0;
-				
+
 				disable_scroll();
-				
+
 				if( pageScroll ) {
 					isRevealed = true;
 					classie.add( container, 'notrans' );
 					classie.add( container, 'modify' );
 				}
-				
+
 				window.addEventListener( 'scroll', scrollPage );
 				trigger.addEventListener( 'click', function() { toggle( 'reveal' ); } );
 			})();
