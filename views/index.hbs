@@ -82,7 +82,8 @@
                 <br> Amazing Prizes <strong>worth <i class="fa fa-inr"></i>5K</strong> to be won! <br><br>
                 <strong>Duration</strong>: To be specified in the problem statement.
                 <br>
-                <strong> First problem statement </strong>: 9:00 AM, Friday on 21-08-2015
+                <strong style="color:#B2B2B2;"> First problem statement </strong>: 9:00 AM, Friday on 21-08-2015 <br>
+                <strong> Second problem statement </strong>: 9:00 AM, Monday on 07-09-2015 <br>
                 {{#if user}}
                 <br>
                   <p>
@@ -91,16 +92,17 @@
                     </a>
                   </p>
                 <p>
-                  <a data-toggle="tab" onclick="registerTab()">
-                    <button class="fill_button"><span class="button_content">Submit </span></button>
+                  <a data-toggle="tab"> <!-- onclick="registerTab()" removed -->
+                    <button class="fill_button" disabled><span class="button_content">Submit </span></button>
                   </a>
                 </p>
               {{else}}
-              <p> <strong>Problem Statement Launched!! Register/Login now!! </strong>
+              <p> <strong>- &nbsp;Round 1 is now over. You can still download the problem statement. </strong>
+              	<br><strong> - &nbsp;Registration for round 2 is independent of your participation in round 1.</strong>
           		<br>
                 <p>
                   <a data-toggle="tab" onclick="registerTab()">
-                    <button class="fill_button"><span class="button_content"> Register </span></button>
+                    <button class="fill_button"><span class="button_content"> Register for round 2 </span></button>
                   </a>
                 </p>
               {{/if}}
@@ -140,16 +142,17 @@
                           </a>
                         </p>
                       <p>
-                        <a data-toggle="tab" onclick="registerTab()">
-                          <button class="fill_button"><span class="button_content">Submit </span></button>
+                        <a data-toggle="tab"> <!-- onClick event removed -->
+                          <button class="fill_button" disabled><span class="button_content">Submit </span></button>
                         </a>
                       </p>
                     {{else}}
-                    <p> <strong>Problem Statement Launched!! Register/Login now!!</strong>
+                    <p> <strong>- &nbsp;Round 1 is now over. You can still download the problem statement.</strong>
+                    <br><strong>- &nbsp;Registration for round 2 is independent of your participation in round 1.</strong> 
                 		<br>
                       <p>
                         <a data-toggle="tab" onclick="registerTab()">
-                          <button class="fill_button"><span class="button_content"> Register </span></button>
+                          <button class="fill_button"><span class="button_content"> Register for round 2 </span></button>
                         </a>
                       </p>
                     {{/if}}
